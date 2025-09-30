@@ -74,7 +74,7 @@ public:
 
         Node* temp = head;
 
-        if (head->next == NULL) { // Only one node
+        if (head->next == NULL) { 
             delete head;
             head = NULL;
             return;
