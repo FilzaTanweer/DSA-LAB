@@ -54,6 +54,39 @@ public:
         temp->next = newNode;
     }
     
+       void deleteFirst() {
+        if (head == NULL) {
+            cout << "List is empty!" << endl;
+            return;
+        }
+
+        Node* temp = head;
+        head = head->next;
+        if (head != NULL) head->prev = NULL;
+        delete temp;
+    }
+    
+     void deleteLast() {
+        if (head == NULL) {
+            cout << "List is empty!" << endl;
+            return;
+        }
+
+        Node* temp = head;
+
+        if (head->next == NULL) { // Only one node
+            delete head;
+            head = NULL;
+            return;
+        }
+
+        while (temp->next != NULL) {
+            temp = temp->next;
+        }
+
+        temp->prev->next = NULL;
+        delete temp;
+    }
     void deleteAtPos(int pos) {
         if (head == NULL) {
             cout << "List is empty!" << endl;
@@ -102,15 +135,22 @@ int main() {
     dll.insertAtPos(10, 1); 
     dll.insertAtPos(20, 2); 
     dll.insertAtPos(25, 2); 
+    dll.insertAtPos(30, 2); 
+    dll.insertAtPos(60, 2); 
+    cout << "Before Deleting" << endl;
     dll.display();
 
+    cout << "After Deleting at pos 2" << endl;
     dll.deleteAtPos(2);     
     dll.display();
-
-    dll.insertAtPos(40, 3); 
+    
+    cout << "After Deleting at first" << endl;
+    dll.deleteFirst(); 
+    dll.display();
+  
+    cout << "After Deleting at last" << endl;
+    dll.deleteLast();  
     dll.display();
 
     return 0;
 }
-
-
