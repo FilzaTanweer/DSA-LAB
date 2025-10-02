@@ -47,7 +47,7 @@ public:
             p2 = p2_next;
         }
 
-        list2.head = p2; 
+        list2.head = p2; // leftover nodes of list2
     }
 
     void display() {
@@ -57,6 +57,10 @@ public:
             temp = temp->next;
         }
         cout << "NULL" << endl;
+    }
+
+    Node* getHead() {
+        return head;
     }
 };
 
@@ -73,17 +77,19 @@ int main() {
     list2.insertAtEnd(7);
     list2.insertAtEnd(8);
 
-    cout << "List 1 before merge: " << endl;
-    list1.display();
-    cout << "List 2 before merge: " << endl;
-    list2.display();
+    cout << "Before merge:" << endl;
+    cout << "head1: ";
+	 list1.display();
+    cout << "head2: ";
+	 list2.display();
 
     list1.mergeAlternate(list2);
 
-    cout << "List 1 after merge: " << endl;
-    list1.display();
-    cout << "Remaining List 2: "<< endl;
-    list2.display();
+    cout << "\nAfter merge:" << endl;
+    cout << "head1: "; 
+	list1.display();
+    cout << "head2: ";
+	 list2.display();
 
     return 0;
 }
