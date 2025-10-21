@@ -62,11 +62,11 @@ int main() {
     }
 
     radixSort(ascArr, n, true);
-    cout << "\nSorted in Ascending Order (Radix Sort):\n";
+    cout << "\nSorted in Ascending Order (Radix Sort): " << endl;
     printArray(ascArr, n);
 
     radixSort(descArr, n, false);
-    cout << "\nSorted in Descending Order (Radix Sort):\n";
+    cout << "\nSorted in Descending Order (Radix Sort): " << endl;
     printArray(descArr, n);
 
     return 0;
