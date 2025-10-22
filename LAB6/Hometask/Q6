@@ -1,0 +1,7 @@
+The most suitable data structure for this messaging application is a Simple Linear Queue (FIFO Queue). In this scenario, 
+messages arrive one after another and must be processed in the exact order they are received. Since the system can handle 
+only one message at a time, each message waits in line until the previous one is completed. This behavior follows the First-In, First Out (FIFO) principle,
+where the first message added to the queue is the first to be processed. A simple linear queue ensures that all messages are managed 
+in a fair and orderly manner, preventing any message from being skipped or delayed unnecessarily. Other types of queues, such as circular or priority queues, 
+are not required here because the messages do not need priority handling or space reusability. Therefore, a FIFO based linear queue 
+is the most appropriate choice for handling message processing in this application.
