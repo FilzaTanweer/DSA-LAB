@@ -1,0 +1,16 @@
+To handle a large number of restaurant orders and ensure they are processed in the same sequence they are received, the most appropriate data structure is a Queue.
+A queue follows the FIFO (First In, First Out) principle, which means the first order placed will be the first to be processed. 
+This perfectly matches the workflow of a busy restaurant where orders must be fulfilled in order.
+The two main operations required for this data structure are Enqueue and Dequeue.
+
+Enqueue (Insertion): This operation is used to add a new order to the rear of the queue. Each order will contain details such as the order number, item name, and quantity. 
+Before adding, the system must check whether the queue is full to prevent overflow.
+
+Dequeue (Deletion): This operation removes an order from the front of the queue for processing.
+Before removal, the system must check whether the queue is empty to avoid underflow.
+
+To prevent overflow, a circular queue can be implemented so that space freed by processed orders can be reused efficiently. 
+To prevent underflow, the system should check if the queue is empty before attempting to remove an order.
+
+Once all orders are processed, the system can print the list of processed orders by traversing the queue in the same order they were served.
+This ensures that the restaurant staff can verify that every order has been handled correctly and in sequence, maintaining efficiency and accuracy in service.
